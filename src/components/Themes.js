@@ -5,7 +5,7 @@ export const lightTheme = {
   bodyRgba : "252, 246, 244",
   textRgba: "0,0,0",
   hoverColor: "rgba(0,255,0,.4)",
-  hoverShadow: "rgba(0,255,0,.4)"
+  hoverShadow: "rgba(0,255,0,.2)"
 }
 
 export const darkTheme = {

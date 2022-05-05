@@ -3,6 +3,8 @@ import LogoComponent from "./subComponents/LogoComponent";
 import PowerButton from "./subComponents/PowerButton";
 import SocialIcons from "./subComponents/SocialIcons";
 import { Link } from "react-router-dom";
+import { Hexagon } from "./AllSVGs";
+import { keyframes } from "styled-components";
 
 const MainContainer = styled.div`
   background: ${props => props.theme.body};
@@ -43,6 +45,10 @@ const ProjectsLink = styled(Link)`
   top: calc(50% - 75px);
   left: 1.3rem;
   transform: rotate(270deg) translate(-50%, -50%);
+
+  @media screen and (max-height: 600px) {
+    left: 3rem;
+  }
 `
 
 const AboutLink = styled(Link)`
@@ -53,6 +59,42 @@ const AboutLink = styled(Link)`
   text-decoration: none;
 `
 
+const rotate = keyframes`
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+`
+
+const Center = styled.button`
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: none;
+  outline: none;
+  background-color: transparent;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Philosopher', sans-serif;
+
+  &>:first-child {
+    animation-name: ${rotate}; 
+    animation-timing-function: linear;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+  }
+
+  &>:last-child {
+    padding-top: 1rem;
+  }
+`
+
 const Main = () => {
   return (
     <MainContainer>
@@ -61,25 +103,33 @@ const Main = () => {
         <LogoComponent />
         <SocialIcons />
 
+        <Center>
+          <Hexagon width={150} height={150} fill='currentColor' />
+          <span>click me</span>
+        </Center>
+
         <Mailto className="heading" rel="noreferrer" target='_blank' href='mailto:tomas.nagy.tn@gmail.com'>
           <h3>Hire me...</h3>
-          
         </Mailto>
+        
         <SkillsLink className="heading" to='/skills'>
           <h2>
             Skills
           </h2>
         </SkillsLink>
+        
         <ProjectsLink className="heading" to='/projects'>
           <h2>
             Projects
           </h2>
         </ProjectsLink>
-          <AboutLink className="heading" to='/about'>
-            <h2>
+        
+        <AboutLink className="heading" to='/about'>
+          <h2>
               About
-            </h2>
-          </AboutLink>
+          </h2>
+        </AboutLink>
+      
       </Container>
     </MainContainer>
   )

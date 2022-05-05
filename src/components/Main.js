@@ -6,6 +6,7 @@ import LogoComponent from "./subComponents/LogoComponent";
 import PowerButton from "./subComponents/PowerButton";
 import SocialIcons from "./subComponents/SocialIcons";
 import { Hexagon } from "./AllSVGs";
+import Intro from "./Intro";
 
 const MainContainer = styled.div`
   background: ${props => props.theme.body};
@@ -127,6 +128,7 @@ const Main = () => {
     <MainContainer>
       <DarkDiv click={click} />
         <Container>
+          
           <PowerButton />
           <LogoComponent theme={click ? 'dark' : 'light'} />
           <SocialIcons theme={click ? 'dark' : 'light'} />
@@ -159,6 +161,8 @@ const Main = () => {
           </AboutLink>
         
         </Container>
+
+        {click ? <Intro click={click} /> : null}
     </MainContainer>
   )
 }

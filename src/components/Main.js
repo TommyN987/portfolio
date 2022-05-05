@@ -1,10 +1,11 @@
+import { useState } from "react";
+import { Link } from "react-router-dom";
 import styled from "styled-components";
+import { keyframes } from "styled-components";
 import LogoComponent from "./subComponents/LogoComponent";
 import PowerButton from "./subComponents/PowerButton";
 import SocialIcons from "./subComponents/SocialIcons";
-import { Link } from "react-router-dom";
 import { Hexagon } from "./AllSVGs";
-import { keyframes } from "styled-components";
 
 const MainContainer = styled.div`
   background: ${props => props.theme.body};
@@ -24,7 +25,6 @@ const Container = styled.div`
 
   .heading {
     text-decoration: none;
-    color: ${props => props.theme.text};
     position: absolute;
     z-index: 1;
   }
@@ -33,17 +33,20 @@ const Container = styled.div`
 const Mailto = styled.a`
   top: 2rem;
   right: 2rem;
+  color: ${props => props.theme.text};
 `
 
 const SkillsLink = styled(Link)`
   bottom: calc(50% - 20px);
   right: 2rem;
+  color: ${props => props.theme.text};
   transform: rotate(90deg) translate(-50%, -50%);
 `
 
 const ProjectsLink = styled(Link)`
   top: calc(50% - 75px);
   left: 1.3rem;
+  color: ${props => props.click ? props.theme.body : props.theme.text};
   transform: rotate(270deg) translate(-50%, -50%);
 
   @media screen and (max-height: 600px) {
@@ -57,6 +60,11 @@ const AboutLink = styled(Link)`
   transform: translate(-50%, 0);
   color: ${props => props.theme.text};
   text-decoration: none;
+
+  span {
+    color: ${props => props.click ? props.theme.body : props.theme.text};
+
+  }
 `
 
 const rotate = keyframes`
@@ -70,8 +78,8 @@ const rotate = keyframes`
 
 const Center = styled.button`
   position: absolute;
-  top: 50%;
-  left: 50%;
+  top: ${props => props.click ? '85%' : '50%'};
+  left: ${props => props.click ? '92%' : '50%'}; // TODO: Make it responsive
   transform: translate(-50%, -50%);
   border: none;
   outline: none;
@@ -82,6 +90,7 @@ const Center = styled.button`
   justify-content: center;
   align-items: center;
   font-family: 'Philosopher', sans-serif;
+  transition: all 1s ease;
 
   &>:first-child {
     animation-name: ${rotate}; 
@@ -91,46 +100,65 @@ const Center = styled.button`
   }
 
   &>:last-child {
+    display: ${props => props.click ? 'none' : 'inline-block'};
     padding-top: 1rem;
   }
 `
 
+const DarkDiv = styled.div`
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 50%;
+  width: ${props => props.click ? '50%' : '0%'};
+  height: ${props => props.click ? '100%' : '0%'};
+  z-index: 1;
+  background-color: #000;
+  transition: height .5s ease, width 1s ease .5s;
+`
+
 const Main = () => {
+
+  const [click, setClick] = useState(false);
+
+  const handleClick = () => setClick(!click);
+
   return (
     <MainContainer>
-      <Container>
-        <PowerButton />
-        <LogoComponent />
-        <SocialIcons />
+      <DarkDiv click={click} />
+        <Container>
+          <PowerButton />
+          <LogoComponent theme={click ? 'dark' : 'light'} />
+          <SocialIcons theme={click ? 'dark' : 'light'} />
 
-        <Center>
-          <Hexagon width={150} height={150} fill='currentColor' />
-          <span>click me</span>
-        </Center>
+          <Center onClick={handleClick} click={click}>
+            <Hexagon width={click ? 80 : 150} height={click ? 80 : 150} fill='currentColor' />
+            <span>click me</span>
+          </Center>
 
-        <Mailto className="heading" rel="noreferrer" target='_blank' href='mailto:tomas.nagy.tn@gmail.com'>
-          <h3>Hire me...</h3>
-        </Mailto>
+          <Mailto className="heading" rel="noreferrer" target='_blank' href='mailto:tomas.nagy.tn@gmail.com'>
+            <h3>Hire me...</h3>
+          </Mailto>
+          
+          <SkillsLink className="heading" to='/skills'>
+            <h2>
+              Skills
+            </h2>
+          </SkillsLink>
+          
+          <ProjectsLink click={click} className="heading" to='/projects'>
+            <h2>
+              Projects
+            </h2>
+          </ProjectsLink>
+          
+          <AboutLink click={click} className="heading" to='/about'>
+            <h2>
+                <span>Ab</span>out
+            </h2>
+          </AboutLink>
         
-        <SkillsLink className="heading" to='/skills'>
-          <h2>
-            Skills
-          </h2>
-        </SkillsLink>
-        
-        <ProjectsLink className="heading" to='/projects'>
-          <h2>
-            Projects
-          </h2>
-        </ProjectsLink>
-        
-        <AboutLink className="heading" to='/about'>
-          <h2>
-              About
-          </h2>
-        </AboutLink>
-      
-      </Container>
+        </Container>
     </MainContainer>
   )
 }

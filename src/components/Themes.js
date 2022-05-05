@@ -1,4 +1,4 @@
-export const lightTheme = {
+export const LightTheme = {
   body:"#FCF6F4",
   text:"#000000",
   fontFamily:"'Mulish', sans-serif",
@@ -8,7 +8,7 @@ export const lightTheme = {
   hoverShadow: "rgba(0,255,0,.2)"
 }
 
-export const darkTheme = {
+export const DarkTheme = {
   body:"#000000",
   text:"#FCF6F4",
   fontFamily:"'Mulish', sans-serif",

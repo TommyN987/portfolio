@@ -1,9 +1,8 @@
 import styled from 'styled-components';
-import { Facebook, Github, Instagram, Linkedin } from "../AllSVGs"
+import { Facebook, Github, Instagram, Linkedin } from "../AllSVGs";
+import { DarkTheme } from '../Themes'
 
-const SocialIcons =() => {
-
-  const Icons = styled.div`
+const Icons = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -26,34 +25,36 @@ const SocialIcons =() => {
     }
   `
 
-  const Line = styled.span`
-    width: 2px;
-    height: 8rem;
-    background-color: ${props => props.theme.text};
-  `
+const Line = styled.span`
+  width: 2px;
+  height: 8rem;
+  background-color: ${props => props.color === 'dark' ? DarkTheme.text : DarkTheme.body};
+`
 
+const SocialIcons = (props) => {
+  
   return (
     <Icons>
       <div>
         <a style={{color: 'inherit'}} rel="noreferrer" target='_blank' href='https://github.com/TommyN987'>
-          <Github width={25} height={25} fill='currentColor' /></a>
+          <Github width={25} height={25} fill={props.theme === 'dark' ? DarkTheme.text : DarkTheme.body} /></a>
       </div>
       <div>
         <a rel='noreferrer' style={{color: 'inherit'}} target='_blank' href='https://www.linkedin.com/in/tommynagy/'>
-          <Linkedin width={25} height={25} fill='currentColor' />
+          <Linkedin width={25} height={25} fill={props.theme === 'dark' ? DarkTheme.text : DarkTheme.body} />
         </a>
       </div>
       <div>
         <a rel='noreferrer' style={{color: 'inherit'}} target='_blank' href='https://www.facebook.com/tomas.nagy.71/'>
-          <Facebook width={25} height={25} fill='currentColor' />
+          <Facebook width={25} height={25} fill={props.theme === 'dark' ? DarkTheme.text : DarkTheme.body} />
         </a>
       </div>
       <div>
         <a rel='noreferrer' style={{color: 'inherit'}} target='_blank' href='https://www.instagram.com/tommyn987/'>
-          <Instagram width={25} height={25} fill='currentColor' />
+          <Instagram width={25} height={25} fill={props.theme === 'dark' ? DarkTheme.text : DarkTheme.body} />
         </a>
       </div>
-      <Line />
+      <Line color={props.theme} />
     </Icons>
   )
 }

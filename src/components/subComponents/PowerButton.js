@@ -6,6 +6,7 @@ import { PowerBtn } from '../AllSVGs';
 const PowerButton = () => {  
 
   const handleHover = () => {
+    // TODO: useContext for theme-based fill
     const fills = document.querySelectorAll('.hoverable');
     fills.forEach(fill => fill.style.fill = 'green');
   }

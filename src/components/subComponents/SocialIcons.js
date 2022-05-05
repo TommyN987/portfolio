@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import styled from 'styled-components';
 import { Facebook, Github, Instagram, Linkedin } from "../AllSVGs"
 
@@ -23,7 +22,7 @@ const SocialIcons =() => {
     }
 
     &>*:not(:last-child) {
-      margin: .5rem 0;
+      margin: .3rem 0;
     }
   `
 

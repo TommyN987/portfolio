@@ -5,6 +5,16 @@ import { PowerBtn } from '../AllSVGs';
 
 const PowerButton = () => {  
 
+  const handleHover = () => {
+    const fills = document.querySelectorAll('.hoverable');
+    fills.forEach(fill => fill.style.fill = 'green');
+  }
+
+  const handleHoverOver = () => {
+    const fills = document.querySelectorAll('.hoverable');
+    fills.forEach(fill => fill.style.fill = '#fff');
+  }
+
   const Power = styled.button`
     position: fixed;
     top: 2rem;
@@ -30,10 +40,12 @@ const PowerButton = () => {
     &>*:first-child {
       color: inherit;
     }
+
+    
   `
 
   return (
-    <Power>
+    <Power onMouseEnter={handleHover} onMouseLeave={handleHoverOver}>
       <Link to='/'>
         <PowerBtn fill='currentColor' />
       </Link>

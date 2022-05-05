@@ -13,6 +13,15 @@ const SocialIcons =() => {
     left: 2rem;
     z-index: 3;
 
+    svg {
+      border-radius: .5rem;
+    }
+
+    svg:hover {
+      background-color: ${props => props.theme.hoverColor};
+      box-shadow: 0 0 8px 6px ${props => props.theme.hoverShadow};
+    }
+
     &>*:not(:last-child) {
       margin: .5rem 0;
     }

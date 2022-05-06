@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { keyframes } from "styled-components";
+import { motion } from "framer-motion";
 import LogoComponent from "./subComponents/LogoComponent";
 import PowerButton from "./subComponents/PowerButton";
 import SocialIcons from "./subComponents/SocialIcons";
@@ -139,25 +140,37 @@ const Main = () => {
           </Center>
 
           <Mailto className="heading" rel="noreferrer" target='_blank' href='mailto:tomas.nagy.tn@gmail.com'>
-            <h3>Hire me...</h3>
+            <motion.h3
+            whileHover={{scale: 1.1}}
+            whileTap={{scale: .9}}
+            >Hire me...</motion.h3>
           </Mailto>
           
           <SkillsLink className="heading" to='/skills'>
-            <h2>
+            <motion.h2
+            whileHover={{scale: 1.1}}
+            whileTap={{scale: .9}}
+            >
               Skills
-            </h2>
+            </motion.h2>
           </SkillsLink>
           
           <ProjectsLink click={click} className="heading" to='/projects'>
-            <h2>
+            <motion.h2
+            whileHover={{scale: 1.1}}
+            whileTap={{scale: .9}}
+            >
               Projects
-            </h2>
+            </motion.h2>
           </ProjectsLink>
           
           <AboutLink click={click} className="heading" to='/about'>
-            <h2>
+            <motion.h2
+            whileHover={{scale: 1.1}}
+            whileTap={{scale: .9}}
+            >
                 <span>Ab</span>out
-            </h2>
+            </motion.h2>
           </AboutLink>
         
         </Container>

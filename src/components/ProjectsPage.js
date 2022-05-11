@@ -8,6 +8,7 @@ import { projects } from '../data/projectsData';
 import { DarkTheme } from './Themes';
 import { useEffect, useRef } from 'react';
 import { Hexagon } from './AllSVGs';
+import BgTitle from './subComponents/BgTitle';
 
 const MainContainer = styled.div`
   background-image: url(${bgImg});
@@ -54,7 +55,7 @@ const ProjectsPage = () => {
 
     const rotate = () => {
       element.style.transform = `translateX(${-window.pageYOffset}px)`;
-      hexagon.current.style.transform = `rotate(` + -window.pageYOffset + 'deg)';
+      hexagon.current.style.transform = `rotate(${-window.pageYOffset / 6}deg)`;
     }
 
     window.addEventListener('scroll', rotate)
@@ -69,15 +70,19 @@ const ProjectsPage = () => {
         <PowerButton />
         <SocialIcons theme='dark' />
 
-        <Main ref={ref}>
+        <Main 
+          ref={ref}>
           {
             projects.map(project => 
-              <Card key={project.id} data={project} />)
+              <Card 
+                key={project.id} 
+                data={project} />)
           }            
         </Main>
         <Rotate ref={hexagon}>
           <Hexagon fill={DarkTheme.text}></Hexagon>
         </Rotate>
+        <BgTitle text='PROJECTS' top='10%' left='10%' />
       </Container>
     </MainContainer>
   )

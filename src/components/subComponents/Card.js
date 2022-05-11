@@ -92,7 +92,7 @@ const Card = (props) => {
       <Tags>
         {
           tags.map(tag => {
-            return <Tag key={id}>#{tag}</Tag>
+            return <Tag key={id * Math.random()}>#{tag}</Tag>
           })
         }
       </Tags>

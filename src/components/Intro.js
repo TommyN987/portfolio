@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
-import Me from '../assets/profile-img.png'
+import Me from '../assets/coding-pic.png'
 
 const Box = styled(motion.div)`
   position: absolute;

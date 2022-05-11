@@ -1,0 +1,51 @@
+export const projects = [
+  {
+    id: 1,
+    name: 'Scarabeus: The Bug Tracker',
+    description: 'Full-stack web application built with React, NodeJS, Express and MongoDB, utilizing libraries such as React-Bootstrap and styled-components',
+    tags: ['react', 'nodejs', 'express', 'mongodb', 'bootstrap', 'styled-components'],
+    demo: '',
+    github: '', 
+  },
+  {
+    id: 2,
+    name: 'Footballista',
+    description: 'A football statistics website built with React, utilizing the Football Standings API.',
+    tags: ['react', 'API'],
+    demo: '',
+    github: '',
+  },
+  {
+    id: 3,
+    name: 'Vivaldi\'s Weather',
+    description: 'A weather application build in JavaScript, using OpenWeather API for retrieving data, and Sass for styling.',
+    tags: ['javascript', 'API', 'sass'],
+    demo: '',
+    github: '', 
+  },
+  {
+    id: 4,
+    name: 'Bookworm',
+    description: 'Simple web application built in Javascript, and focused on finding the frequency of appearance of words in popular books. Utilizing Bootstrap, Sass and webpack.',
+    tags: ['javascript', 'bootstrap', 'sass', 'webpack'],
+    demo: '',
+    github: '', 
+  },
+  {
+    id: 5,
+    name: 'Bookworm',
+    description: 'Simple web application built in Javascript, and focused on finding the frequency of appearance of words in popular books. Utilizing Bootstrap, Sass and webpack.',
+    tags: ['javascript', 'bootstrap', 'sass', 'webpack'],
+    demo: '',
+    github: '', 
+  },
+  {
+    id: 6,
+    name: 'Bookworm',
+    description: 'Simple web application built in Javascript, and focused on finding the frequency of appearance of words in popular books. Utilizing Bootstrap, Sass and webpack.',
+    tags: ['javascript', 'bootstrap', 'sass', 'webpack'],
+    demo: '',
+    github: '', 
+  },
+
+]

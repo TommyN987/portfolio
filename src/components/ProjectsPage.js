@@ -1,15 +1,19 @@
-import bgImg from '../assets/projects-bg.jpg';
+import { useEffect, useRef } from 'react';
+
 import styled from 'styled-components';
+import { ThemeProvider } from 'styled-components';
+import { DarkTheme } from './Themes';
+
+import { motion } from 'framer-motion';
+
+import bgImg from '../assets/projects-bg.jpg';
 import LogoComponent from './subComponents/LogoComponent';
 import PowerButton from './subComponents/PowerButton';
 import SocialIcons from './subComponents/SocialIcons';
 import Card from './subComponents/Card';
 import { projects } from '../data/projectsData';
-import { DarkTheme } from './Themes';
-import { useEffect, useRef } from 'react';
-import { Hexagon } from './AllSVGs';
 import BgTitle from './subComponents/BgTitle';
-import { ThemeProvider } from 'styled-components';
+import { Hexagon } from './AllSVGs';
 
 const MainContainer = styled.div`
   background-image: url(${bgImg});
@@ -27,7 +31,7 @@ const Container = styled.div`
   overflow: hidden;
 `
 
-const Main = styled.ul`
+const Main = styled(motion.ul)`
   position: fixed;
   top: 15rem;
   left: calc(10rem + 15vw);
@@ -45,6 +49,17 @@ const Rotate = styled.span`
   height: 80px;
   z-index: 1;
 `
+
+const container = {
+  hidden: { opacity: 0 },
+  show: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.5,
+      duration: 0.5
+    }
+  }
+}
 
 const ProjectsPage = () => {
 
@@ -73,7 +88,10 @@ const ProjectsPage = () => {
         <SocialIcons theme='dark' />
 
         <Main 
-          ref={ref}>
+          ref={ref}
+          variants={container}
+          initial='hidden'
+          animate='show'>
           {
             projects.map(project => 
               <Card 

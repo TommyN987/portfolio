@@ -143,6 +143,22 @@ const Main = () => {
             <motion.h3
             whileHover={{scale: 1.1}}
             whileTap={{scale: .9}}
+            initial={{
+              y: -200,
+              transition: {
+                type: 'spring',
+                duration: 1.5,
+                delay: 1
+              }
+            }}
+            animate={{
+              y: 0,
+              transition: {
+                type: 'spring',
+                duration: 1.5,
+                delay: 1
+              }
+            }}
             >Hire me...</motion.h3>
           </Mailto>
           
@@ -150,6 +166,22 @@ const Main = () => {
             <motion.h2
             whileHover={{scale: 1.1}}
             whileTap={{scale: .9}}
+            initial={{
+              y: -200,
+              transition: {
+                type: 'spring',
+                duration: 1.5,
+                delay: 1
+              }
+            }}
+            animate={{
+              y: 0,
+              transition: {
+                type: 'spring',
+                duration: 1.5,
+                delay: 1
+              }
+            }}
             >
               Skills
             </motion.h2>
@@ -159,6 +191,22 @@ const Main = () => {
             <motion.h2
             whileHover={{scale: 1.1}}
             whileTap={{scale: .9}}
+            initial={{
+              y: -200,
+              transition: {
+                type: 'spring',
+                duration: 1.5,
+                delay: 1
+              }
+            }}
+            animate={{
+              y: 0,
+              transition: {
+                type: 'spring',
+                duration: 1.5,
+                delay: 1
+              }
+            }}
             >
               Projects
             </motion.h2>
@@ -168,6 +216,22 @@ const Main = () => {
             <motion.h2
             whileHover={{scale: 1.1}}
             whileTap={{scale: .9}}
+            initial={{
+              y: 200,
+              transition: {
+                type: 'spring',
+                duration: 1.5,
+                delay: 1
+              }
+            }}
+            animate={{
+              y: 0,
+              transition: {
+                type: 'spring',
+                duration: 1.5,
+                delay: 1
+              }
+            }}
             >
                 <span>Ab</span>out
             </motion.h2>

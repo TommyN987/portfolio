@@ -5,13 +5,13 @@ const Text = styled.h1`
   top: ${props => props.top};
   left: ${props => props.left};
   right: ${props => props.right};
-  color: ${props => `rgba(${props.theme.bodyRgba}, .3)`};
+  color: ${props => `rgba(${props.theme.textRgba}, .3)`};
   font-size: calc(5rem + 5vw);
   font-family: 'Philosopher';
-  z-index: 0;
+  z-index: 8;
 `
 
-function BgTitle(props) {
+const BgTitle = (props) => {
   return (
     <Text top={props.top} left={props.left} right={props.right}>
       {props.text}

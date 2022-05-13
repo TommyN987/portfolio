@@ -9,6 +9,7 @@ import { DarkTheme } from './Themes';
 import { useEffect, useRef } from 'react';
 import { Hexagon } from './AllSVGs';
 import BgTitle from './subComponents/BgTitle';
+import { ThemeProvider } from 'styled-components';
 
 const MainContainer = styled.div`
   background-image: url(${bgImg});
@@ -64,6 +65,7 @@ const ProjectsPage = () => {
   }, []);
 
   return (
+    <ThemeProvider theme={DarkTheme}>
     <MainContainer>
       <Container >
         <LogoComponent theme='dark' />
@@ -85,6 +87,7 @@ const ProjectsPage = () => {
         <BgTitle text='PROJECTS' top='10%' left='10%' />
       </Container>
     </MainContainer>
+    </ThemeProvider>
   )
 }
 

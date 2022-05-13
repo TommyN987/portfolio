@@ -3,20 +3,20 @@ import styled from 'styled-components';
 const Box = styled.li`
   width: 22rem;
   height: 40vh;
-  background-color: ${props => props.theme.body};
-  color: ${props => props.theme.text};
+  background-color: ${props => props.theme.text};
+  color: ${props => props.theme.body};
   padding: 1.5rem 2rem;
   list-style-type: none;
   border-radius: 0 50px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  border: 1px solid ${props => props.theme.body};
+  border: 1px solid ${props => props.theme.text};
   transition: all .2s ease;
 
   &:hover {
-    background-color: ${props => props.theme.text};
-    color: ${props => props.theme.body};
+    background-color: ${props => props.theme.body};
+    color: ${props => props.theme.text};
   }
 `
 
@@ -31,13 +31,13 @@ const Description = styled.h3`
 `
 
 const Tags = styled.div`
-  border-top: 2px solid ${props => props.theme.text};
+  border-top: 2px solid ${props => props.theme.body};
   padding-top: .5rem;
   display: flex;
   flex-wrap: wrap;
 
   ${Box}:hover &{
-    border-top: 2px solid ${props => props.theme.body};
+    border-top: 2px solid ${props => props.theme.text};
   }
 `
 
@@ -53,8 +53,8 @@ const Footer = styled.footer`
 `
 
 const Link = styled.a`
-  background-color: ${props => props.theme.text};
-  color: ${props => props.theme.body};
+  background-color: ${props => props.theme.body};
+  color: ${props => props.theme.text};
   text-decoration: none;
   padding: .5rem 2rem;
   border-radius: 0 0 0 50px;
@@ -62,22 +62,22 @@ const Link = styled.a`
   text-align: end;
 
   ${Box}:hover & {
-    background-color: ${props => props.theme.body};
-    color: ${props => props.theme.text};
+    background-color: ${props => props.theme.text};
+    color: ${props => props.theme.body};
   }
 `
 
 const Github = styled.a`
-  background-color: ${props => props.theme.text};
-  color: ${props => props.theme.body};
+  background-color: ${props => props.theme.body};
+  color: ${props => props.theme.text};
   text-decoration: none;
   padding: .5rem 2rem;
   border-radius: 0 50px 0 0;
   font-size: calc(.8em + .3vw);
 
   ${Box}:hover & {
-    background-color: ${props => props.theme.body};
-    color: ${props => props.theme.text};
+    background-color: ${props => props.theme.text};
+    color: ${props => props.theme.body};
   }
 `
 

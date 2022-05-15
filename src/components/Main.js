@@ -8,6 +8,7 @@ import PowerButton from "./subComponents/PowerButton";
 import SocialIcons from "./subComponents/SocialIcons";
 import { Hexagon } from "./AllSVGs";
 import Intro from "./Intro";
+import  { mediaQueries } from './Themes'
 
 const MainContainer = styled.div`
   background: ${props => props.theme.body};
@@ -43,6 +44,11 @@ const SkillsLink = styled(Link)`
   right: 2rem;
   color: ${props => props.theme.text};
   transform: rotate(90deg) translate(-50%, -50%);
+
+  @media only screen and (max-width: 50em) {
+    color: ${props => props.click ? props.theme.body : props.theme.text};
+    text-shadow: ${(props) => (props.click ? "0 0 4px #000" : "none")};
+  }
 `
 
 const ProjectsLink = styled(Link)`
@@ -53,6 +59,12 @@ const ProjectsLink = styled(Link)`
 
   @media screen and (max-height: 600px) {
     left: 3rem;
+  }
+
+  span {
+    @media only screen and (max-width: 50em) {
+      color: ${props => props.theme.text};
+    }
   }
 `
 
@@ -65,7 +77,6 @@ const AboutLink = styled(Link)`
 
   span {
     color: ${props => props.click ? props.theme.body : props.theme.text};
-
   }
 `
 
@@ -105,6 +116,17 @@ const Center = styled.button`
     display: ${props => props.click ? 'none' : 'inline-block'};
     padding-top: 1rem;
   }
+
+  @media only screen and (max-width: 50em) {
+    top: ${(props) => (props.click ? "90%" : "50%")};
+    left: ${(props) => (props.click ? "90%" : "50%")};
+    width: ${(props) => (props.click ? "80px" : "150px")};
+    height: ${(props) => (props.click ? "80px" : "150px")};
+  }
+  @media only screen and (max-width: 30em) {
+    width: ${(props) => (props.click ? "40px" : "150px")};
+    height: ${(props) => (props.click ? "40px" : "150px")};
+  }
 `
 
 const DarkDiv = styled.div`
@@ -117,11 +139,25 @@ const DarkDiv = styled.div`
   z-index: 1;
   background-color: #000;
   transition: height .5s ease, width 1s ease .5s;
+
+  ${(props) =>
+    props.click
+      ? mediaQueries(50)`
+        height: 50%;
+        right:0;
+        width: 100%;
+        transition: width 0.5s ease, height 1s ease 0.5s;`
+      : mediaQueries(50)`
+        height: 0;
+        width: 0;`
+  };
 `
 
 const Main = () => {
 
   const [click, setClick] = useState(false);
+
+  console.log(click);
 
   const handleClick = () => setClick(!click);
 
@@ -162,7 +198,9 @@ const Main = () => {
             >Hire me...</motion.h3>
           </Mailto>
           
-          <SkillsLink className="heading" to='/skills'>
+          <SkillsLink 
+            click={click}
+            className="heading" to='/skills'>
             <motion.h2
             whileHover={{scale: 1.1}}
             whileTap={{scale: .9}}
@@ -208,7 +246,7 @@ const Main = () => {
               }
             }}
             >
-              Projects
+              <span>Pr</span>ojects
             </motion.h2>
           </ProjectsLink>
           

@@ -140,7 +140,7 @@ const Text = styled.div`
     font-weight: 300;
 
     ${mediaQueries(40)`
-      font-size: calc(0.5rem + 1vw);`
+      font-size: calc(0.8rem + 1vw);`
     };
   }
 
@@ -177,7 +177,7 @@ const Intro = () => {
           <Text>
             <h1>Hi,</h1>
             <h3>I'm Tommy Nagy.</h3>
-            <h6>I develop responsive websites and web applications.</h6>
+            <h6>I develop modern and responsive websites and web applications.</h6>
           </Text>
         </SubBox>
         <SubBox>

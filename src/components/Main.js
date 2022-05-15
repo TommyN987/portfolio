@@ -31,12 +31,19 @@ const Container = styled.div`
     position: absolute;
     z-index: 1;
   }
+
+  
+
 `
 
 const Mailto = styled.a`
   top: 2rem;
   right: 2rem;
   color: ${props => props.theme.text};
+
+  @media only screen and (max-width: 50em) {
+    color: ${props => props.theme.body}
+  }
 `
 
 const SkillsLink = styled(Link)`
@@ -76,7 +83,13 @@ const AboutLink = styled(Link)`
   text-decoration: none;
 
   span {
+    @media only screen and (min-width: 50em) {
     color: ${props => props.click ? props.theme.body : props.theme.text};
+    }
+  }
+
+  @media only screen and (max-width: 50em) {
+    color: ${props => props.theme.text}
   }
 `
 
@@ -157,8 +170,6 @@ const Main = () => {
 
   const [click, setClick] = useState(false);
 
-  console.log(click);
-
   const handleClick = () => setClick(!click);
 
   return (
@@ -175,7 +186,9 @@ const Main = () => {
             <span>click me</span>
           </Center>
 
-          <Mailto className="heading" rel="noreferrer" target='_blank' href='mailto:tomas.nagy.tn@gmail.com'>
+          <Mailto 
+          click={click}
+          className="heading" rel="noreferrer" target='_blank' href='mailto:tomas.nagy.tn@gmail.com'>
             <motion.h3
             whileHover={{scale: 1.1}}
             whileTap={{scale: .9}}

@@ -33,19 +33,10 @@ export const projects = [
   },
   {
     id: 5,
-    name: 'Bookworm',
-    description: 'Simple web application built in Javascript, and focused on finding the frequency of appearance of words in popular books. Utilizing Bootstrap, Sass and webpack.',
-    tags: ['javascript', 'bootstrap', 'sass', 'webpack'],
+    name: 'Hex-a-sketch',
+    description: 'An etch-a-sketch game with user-customizable grid and several painting options.',
+    tags: ['javascript'],
     demo: '',
     github: '', 
   },
-  {
-    id: 6,
-    name: 'Bookworm',
-    description: 'Simple web application built in Javascript, and focused on finding the frequency of appearance of words in popular books. Utilizing Bootstrap, Sass and webpack.',
-    tags: ['javascript', 'bootstrap', 'sass', 'webpack'],
-    demo: '',
-    github: '', 
-  },
-
 ]

@@ -25,7 +25,7 @@ const MainContainer = styled.div`
 
 const Container = styled.div`
   background-color: rgba(0,0,0, .7);
-  height: 400vh;
+  height: 450vh;
   position: relative;
   padding: 5rem;
   overflow: hidden;

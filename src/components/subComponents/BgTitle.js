@@ -9,6 +9,11 @@ const Text = styled.h1`
   font-size: calc(5rem + 5vw);
   font-family: 'Philosopher';
   z-index: 8;
+
+  @media screen and (max-width: 500px) {
+    font-size: calc(4rem + 2vw);
+  }
+
 `
 
 const BgTitle = (props) => {

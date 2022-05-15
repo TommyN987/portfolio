@@ -68,7 +68,7 @@ const AboutPage = () => {
           <p><strong> I am a full-stack web developer based in Bavaria, Germany.</strong></p>
           <p>After working for seven years for the Parliament of the Slovak Republic as a state official specializing in European Union affairs, I have come to the decision to both re-locate and re-qualify. Thus, I started my journey into software development.</p>
           <p>Having a keen eye for the aesthetic, I started on the front-end. After familiarizing myself with front-end tech such as CSS, Sass, JavaScript/TypeScript and React, I have also been adding back-end tech to my scope of expertise, aiming for achieving proficiency in the entirety of the MERN stack. For the implementation, please see my <RouteLink to='/projects'>projects</RouteLink>.</p>
-          <p>I will be happy to provide my services to your company. For more information, please see my <SiteLink rel="noreferrer" target='_blank' href='#'>CV</SiteLink>, and do connect with me via any of the social links on the left, or via <SiteLink rel="noreferrer" target='_blank' href='mailto:tomas.nagy.tn@gmail.com'>e-mail</SiteLink>.</p>
+          <p>I will be happy to provide my services to your company. For more information, please see my <SiteLink rel="noreferrer" target='_blank' href='#'>CV</SiteLink>, and do connect with me via any of the social links on the left, or via <SiteLink rel="noreferrer" target='_blank' href='mailto:tomas.nagy.tn@gmail.com'>email</SiteLink>.</p>
         </Box>
       </Main>
       <DarkParticleComponent />

@@ -22,7 +22,7 @@ const Power = styled.button`
 
   &:hover {
     background-color: ${props => props.themehoverColor};
-    box-shadow: 0 0 8px 6px ${props => props.themehoverShadow};
+    box-shadow: 0 0 16px 16px ${props => props.theme.hoverShadow};
   }
 
   &>*:first-child {
@@ -35,7 +35,7 @@ const PowerButton = () => {
   const handleHover = () => {
     // TODO: useContext for theme-based fill
     const fills = document.querySelectorAll('.hoverable');
-    fills.forEach(fill => fill.style.fill = 'green');
+    fills.forEach(fill => fill.style.fill = 'rgb(100,200,100)');
   }
 
   const handleHoverOver = () => {

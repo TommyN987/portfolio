@@ -10,7 +10,7 @@ import { Hexagon } from "./AllSVGs";
 import Intro from "./Intro";
 import  { mediaQueries } from './Themes'
 
-const MainContainer = styled.div`
+const MainContainer = styled(motion.div)`
   background: ${props => props.theme.body};
   width: 100vw;
   height: 100vh;
@@ -19,7 +19,6 @@ const MainContainer = styled.div`
 `
 
 const Container = styled.div`
-  padding: 2rem;
 
   h2,h3,h4,h5,h5 {
     font-family: 'Philosopher', sans-serif;
@@ -31,9 +30,6 @@ const Container = styled.div`
     position: absolute;
     z-index: 1;
   }
-
-  
-
 `
 
 const Mailto = styled.a`
@@ -56,6 +52,10 @@ const SkillsLink = styled(Link)`
     color: ${props => props.click ? props.theme.body : props.theme.text};
     text-shadow: ${(props) => (props.click ? "0 0 4px #000" : "none")};
   }
+
+  @media screen and (max-width: 30em) {
+    right: 1rem
+  }
 `
 
 const ProjectsLink = styled(Link)`
@@ -64,14 +64,18 @@ const ProjectsLink = styled(Link)`
   color: ${props => props.click ? props.theme.body : props.theme.text};
   transform: rotate(270deg) translate(-50%, -50%);
 
-  @media screen and (max-height: 600px) {
-    left: 3rem;
-  }
-
   span {
     @media only screen and (max-width: 50em) {
       color: ${props => props.theme.text};
     }
+  }
+
+  @media only screen and (max-height: 600px) {
+    left: 3rem;
+  }
+
+  @media screen and (max-width: 30em) {
+    left: .3rem
   }
 `
 
@@ -169,17 +173,33 @@ const DarkDiv = styled.div`
 const Main = () => {
 
   const [click, setClick] = useState(false);
+  const [path, setPath] = useState('');
 
   const handleClick = () => setClick(!click);
 
+  const pageTransition = () => {
+    if (path === 'about') {
+      return { y: '-100%' }
+    } else if (path === 'skills') {
+      return { x: '-100%'}
+    } else if (path === 'projects') {
+      return { x: '100%' }
+    }
+  }
+
   return (
-    <MainContainer>
+    <MainContainer
+      initial={{ opacity: 0}}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 1 }}
+      exit={() => pageTransition()}
+      >
       <DarkDiv click={click} />
         <Container>
           
           <PowerButton />
           <LogoComponent theme={click ? 'dark' : 'light'} />
-          <SocialIcons theme={click ? 'dark' : 'light'} />
+          <SocialIcons theme={click && window.innerHeight > 800 ? 'dark' : null} />
 
           <Center onClick={handleClick} click={click}>
             <Hexagon width={click ? 80 : 150} height={click ? 80 : 150} fill='currentColor' />
@@ -212,6 +232,7 @@ const Main = () => {
           </Mailto>
           
           <SkillsLink 
+            onClick={() => setPath('skills')}
             click={click}
             className="heading" to='/skills'>
             <motion.h2
@@ -238,7 +259,10 @@ const Main = () => {
             </motion.h2>
           </SkillsLink>
           
-          <ProjectsLink click={click} className="heading" to='/projects'>
+          <ProjectsLink 
+            onClick={() => setPath('projects')}
+            click={click}              
+            className="heading" to='/projects'>
             <motion.h2
             whileHover={{scale: 1.1}}
             whileTap={{scale: .9}}
@@ -263,7 +287,9 @@ const Main = () => {
             </motion.h2>
           </ProjectsLink>
           
-          <AboutLink click={click} className="heading" to='/about'>
+          <AboutLink 
+          onClick={() => setPath('about')}
+          click={click} className="heading" to='/about'>
             <motion.h2
             whileHover={{scale: 1.1}}
             whileTap={{scale: .9}}

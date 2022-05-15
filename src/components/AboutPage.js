@@ -22,7 +22,7 @@ const Box = styled.div`
   padding: 2rem;
   color: ${props => props.theme.text};
   z-index: 3;
-  width: 50vw;
+  width: 55vw;
   height: 60vh;
   line-height: 1.5;
   font-size: calc(.6em + .8vw);
@@ -30,6 +30,20 @@ const Box = styled.div`
   flex-direction: column;
   justify-content: space-evenly;
   backdrop-filter: blur(6px);
+
+  @media screen and (max-width: 1020px) {
+    position: absolute;
+    bottom: 8rem;
+    width: 70vw;
+  }
+  
+  @media screen and (max-width: 600px) {
+    bottom: 5rem;
+  }
+
+  @media screen and (max-width: 440px) {
+    font-size: calc(.6em + .2vw);
+  }
 `
 
 const RouteLink = styled(Link)`

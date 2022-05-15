@@ -23,6 +23,7 @@ const Card = styled.div`
   background-color: ${props => props.theme.body};
   padding: 2rem;
   width: 35vw;
+  min-width: 270px;
   height: 60vh;
   z-index: 3;
   line-height: 1.5;
@@ -34,6 +35,10 @@ const Card = styled.div`
     border: 2px solid ${props => props.theme.body};
     color: ${props => props.theme.body};
     background-color: ${props => props.theme.text};
+  }
+
+  @media screen and (max-width: 1024px) {
+    width: 45vw;
   }
 `
 
@@ -51,11 +56,11 @@ const Title = styled.h1`
 `
 
 const Subtitle = styled.h3`
-  font-size: calc(.6em + 1vw);
+  font-size: calc(1em + 1vw);
 `
 
 const Text = styled.p`
-  font-size: calc(.4em + 1vw);
+  font-size: calc(.8em + 1vw);
   margin-left: 2rem;
 `
 

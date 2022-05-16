@@ -8,7 +8,7 @@ import PowerButton from "./subComponents/PowerButton";
 import SocialIcons from "./subComponents/SocialIcons";
 import { Hexagon } from "./AllSVGs";
 import Intro from "./Intro";
-import  { mediaQueries } from './Themes'
+import  { mediaQueries, LightTheme } from './Themes'
 
 const MainContainer = styled(motion.div)`
   background: ${props => props.theme.body};
@@ -132,6 +132,7 @@ const Center = styled.button`
   &>:last-child {
     display: ${props => props.click ? 'none' : 'inline-block'};
     padding-top: 1rem;
+    color: ${props => props.theme.text}
   }
 
   @media only screen and (max-width: 50em) {
@@ -154,7 +155,7 @@ const DarkDiv = styled.div`
   width: ${props => props.click ? '50%' : '0%'};
   height: ${props => props.click ? '100%' : '0%'};
   z-index: 1;
-  background-color: #000;
+  background-color: ${props => props.theme.text};
   transition: height .5s ease, width 1s ease .5s;
 
   ${(props) =>
@@ -202,7 +203,7 @@ const Main = () => {
           <SocialIcons theme={click && window.innerHeight > 800 ? 'dark' : null} />
 
           <Center onClick={handleClick} click={click}>
-            <Hexagon width={click ? 80 : 150} height={click ? 80 : 150} fill='currentColor' />
+            <Hexagon width={click ? 80 : 150} height={click ? 80 : 150} fill={LightTheme.text} />
             <span>click me</span>
           </Center>
 

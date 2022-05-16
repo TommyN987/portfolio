@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
-import Me from '../assets/coding-pic.png';
+import Me from '../assets/intro-pic.png';
 import { mediaQueries } from './Themes';
 
 const Box = styled(motion.div)`
@@ -26,7 +26,7 @@ const Box = styled(motion.div)`
   border-right: 2px solid ${props => props.theme.text};
   z-index: 1;
 
-  ${mediaQueries(1200)`
+  ${mediaQueries(120)`
     width: 65vw;
   `};
 
@@ -40,24 +40,17 @@ const Box = styled(motion.div)`
 
     flex-direction:column;
     justify-content:space-between;
-  
   `};
 
   ${mediaQueries(40)`
     width: 60vw;
-    
-  
   `};
 
   ${mediaQueries(30)`
     width: 70vw;
-    
-  
   `};
   ${mediaQueries(20)`
     width: 60vw;
-    
-  
   `};
 
   @media only screen and (max-width: 50em) {
@@ -77,7 +70,6 @@ const Box = styled(motion.div)`
     background-position: 0 0, 100% 0;
     background-repeat: no-repeat;
   }
-
 `
 
 const SubBox = styled.div`
@@ -90,35 +82,15 @@ const SubBox = styled.div`
     bottom: 0;
     left: 50%;
     transform: translate(-50%, 0);
-    width: 100%;
+    width: clamp(100px, 30vw, 350px);
     height: auto;
+    z-index: -10;
   }
 
   ${mediaQueries(50)`
     width: 100%;
     height: 50%;
-    
-    .pic {
-      width: 70%;
-    }`
-  };
-
-  ${mediaQueries(40)`
-    .pic {
-      width: 80%;
-    }`
-  };
-
-  ${mediaQueries(30)`
-    .pic {
-      width: 90%;
-    }`
-  };
-
-  ${mediaQueries(20)`
-    .pic {
-      width: 80%;
-    }`
+    `
   };
 `
 

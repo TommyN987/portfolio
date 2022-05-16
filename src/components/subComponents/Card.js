@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 
 const Box = styled(motion.li)`
   width: 22rem;
-  height: 45vh;
+  height: min(45vh, 400px);
   background-color: ${props => props.theme.text};
   color: ${props => props.theme.body};
   padding: 1.5rem 2rem;
@@ -20,7 +20,10 @@ const Box = styled(motion.li)`
     color: ${props => props.theme.text};
   }
 
-  
+  @media screen and (max-width: 500px) {
+    width: 18rem;
+/*     height: 50vh;
+ */  }
 `
 
 const Title = styled.h2`
@@ -29,7 +32,7 @@ const Title = styled.h2`
 `
 
 const Description = styled.h3`
-  font-size: calc(.8em + .4vw);
+  font-size: clamp(14px, calc(.8em + .4vw), 19px);
   font-weight: 400;
 `
 

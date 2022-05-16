@@ -24,7 +24,7 @@ const MainContainer = styled.div`
 `
 
 const Container = styled.div`
-  background-color: rgba(0,0,0, .7);
+  background-color: rgba(31,12,0, .9);
   height: 450vh;
   position: relative;
   padding: 5rem;
@@ -33,11 +33,16 @@ const Container = styled.div`
 
 const Main = styled(motion.ul)`
   position: fixed;
-  top: 15rem;
+  top: 18rem;
   left: calc(10rem + 15vw);
   height: 40vh;
   display: flex;
   gap: 8rem;
+
+  @media screen and (max-width: 500px) {
+    left: 3.5rem;
+    top: 12rem;
+  }
 `
 
 const Rotate = styled.span`

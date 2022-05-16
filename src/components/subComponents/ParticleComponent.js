@@ -14,7 +14,7 @@ export const LightParticleComponent = () => {
       options={{
         background: {
           color: {
-            value: '#FCF6F4',
+            value: '#feffee',
           },
         },
         fpsLimit: 40,
@@ -42,10 +42,10 @@ export const LightParticleComponent = () => {
           },
           particles: {
             color: {
-              value: "#000",
+              value: "#27acc4",
             },
             links: {
-              color: "#000",
+              color: "#27acc4",
               distance: 150,
               enable: true,
               opacity: 0.5,
@@ -101,7 +101,7 @@ export const DarkParticleComponent = () => {
       options={{
         background: {
           color: {
-            value: '#000',
+            value: '#001e29',
           },
         },
         fpsLimit: 40,
@@ -129,7 +129,7 @@ export const DarkParticleComponent = () => {
           },
           particles: {
             color: {
-              value: '#FCF6F4',
+              value: '#feffee',
             },
             collisions: {
               enable: true,

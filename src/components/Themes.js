@@ -1,21 +1,21 @@
 export const LightTheme = {
-  body:"#FCF6F4",
-  text:"#000000",
+  body:"#feffee",
+  text:"#3d0c02",
   fontFamily:"'Mulish', sans-serif",
   bodyRgba : "252, 246, 244",
   textRgba: "0,0,0",
-  hoverColor: "rgba(0,255,0,.4)",
-  hoverShadow: "rgba(0,255,0,.2)"
+  hoverColor: "rgba(0, 255, 217,.4)",
+  hoverShadow: "rgba(0, 255, 217,.2)"
 }
 
 export const DarkTheme = {
-  body:"#000000",
-  text:"#FCF6F4",
+  body:"#3d0c02",
+  text:"#feffee",
   fontFamily:"'Mulish', sans-serif",
   bodyRgba : "0,0,0",
   textRgba: "252, 246, 244",
-  hoverColor: "rgba(0,255,0,.4)",
-  hoverShadow: "rgba(0,255,0,.4)"
+  hoverColor: "rgba(0, 255, 217,.4)",
+  hoverShadow: "rgba(0, 255, 217,.4)"
 }
 
 export const breakpoints = {

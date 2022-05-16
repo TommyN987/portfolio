@@ -21,7 +21,7 @@ const Power = styled.button`
   cursor: pointer;
 
   &:hover {
-    background-color: ${props => props.themehoverColor};
+    background-color: ${props => props.theme.hoverColor};
     box-shadow: 0 0 16px 16px ${props => props.theme.hoverShadow};
   }
 

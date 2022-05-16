@@ -57,11 +57,16 @@ const Title = styled.h1`
 
 const Subtitle = styled.h3`
   font-size: calc(1em + 1vw);
+  margin-top: 1rem;
 `
 
 const Text = styled.p`
   font-size: calc(.8em + 1vw);
   margin-left: 2rem;
+
+  @media screen and (max-width: 500px) {
+    margin-left: 1rem;
+  }
 `
 
 const SkillsPage = () => {
@@ -78,16 +83,12 @@ const SkillsPage = () => {
             <span>Skills</span>
           </Title>
           <div>
-            <Subtitle>FRONTEND</Subtitle>
-            <Text>HTML, CSS, Sass, Bootstrap, JavaScript, TypeScript, React</Text>
+            <Subtitle>CODING SKILLS</Subtitle>
+            <Text>HTML, CSS, Sass, Bootstrap, JavaScript, TypeScript, React, Git, webpack, Jest</Text>
           </div>
           <div>
-            <Subtitle>BACKEND</Subtitle>
-            <Text>Node.js, Express, MongoDB</Text>
-          </div>
-          <div>
-            <Subtitle>MISCELLANEOUS</Subtitle>
-            <Text>VSCode, Git, webpack, Jest</Text>
+            <Subtitle>SOFT SKILLS</Subtitle>
+            <Text>Fast learner, problem solver, highly motivated, efficient under pressure, good communicator, team player</Text>
           </div>
         </Card>
       </Main>

@@ -22,8 +22,7 @@ const Box = styled(motion.li)`
 
   @media screen and (max-width: 500px) {
     width: 18rem;
-/*     height: 50vh;
- */  }
+  }
 `
 
 const Title = styled.h2`

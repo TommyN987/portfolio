@@ -24,7 +24,7 @@ const Card = styled.div`
   padding: 2rem;
   width: 35vw;
   min-width: 270px;
-  height: 60vh;
+  height: 70vh;
   z-index: 3;
   line-height: 1.5;
   display: flex;
@@ -38,7 +38,7 @@ const Card = styled.div`
   }
 
   @media screen and (max-width: 1024px) {
-    width: 45vw;
+    width: 50vw;
   }
 `
 
@@ -61,7 +61,7 @@ const Subtitle = styled.h3`
 `
 
 const Text = styled.p`
-  font-size: calc(.8em + 1vw);
+  font-size: calc(1.1em + .7vw);
   margin-left: 2rem;
 
   @media screen and (max-width: 500px) {
@@ -84,7 +84,7 @@ const SkillsPage = () => {
           </Title>
           <div>
             <Subtitle>CODING SKILLS</Subtitle>
-            <Text>HTML, CSS, Sass, Bootstrap, JavaScript, TypeScript, React, Git, webpack, Jest</Text>
+            <Text>HTML, CSS, Sass, JavaScript, TypeScript, React, Node.js, Express, MongoDB, Git, webpack, Jest</Text>
           </div>
           <div>
             <Subtitle>SOFT SKILLS</Subtitle>

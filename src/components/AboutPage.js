@@ -25,7 +25,7 @@ const Box = styled.div`
   width: 55vw;
   height: 60vh;
   line-height: 1.5;
-  font-size: calc(.6em + .8vw);
+  font-size: calc(.9em + .5vw);
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
@@ -65,9 +65,9 @@ const AboutPage = () => {
         <SocialIcons theme='dark' />
         <BgTitle text='ABOUT' top='8%' left='10%' />
         <Box>
-          <p><strong> I AM A FRONT-END DEVELOPER BASED IN BAVARIA, GERMANY.</strong></p>
+          <p><strong> I AM A WEB DEVELOPER BASED IN BAVARIA, GERMANY.</strong></p>
           <p>After working for seven years for the Parliament of the Slovak Republic as a state official specializing in European Union affairs, I have come to the decision to both re-locate and re-qualify. Thus, I started my journey into software development.</p>
-          <p>Having a keen eye for the aesthetic, I decided to dive into the front end. After familiarizing myself with basic tech such as CSS, Sass, JavaScript/TypeScript, I chose React as my first framework to master. In the future, I'm aiming to achieve proficiency in the entirety of the MERN stack. For the implementation of my skillset, please see my <RouteLink to='/projects'>projects</RouteLink>.</p>
+          <p>Having a keen eye for the aesthetic, I decided to dive into the front end first. After familiarizing myself with basic tech such as CSS, Sass, JavaScript/TypeScript, I chose React as my first framework to master. Following that, I started to study and practice backend technologies - Node.js, Express and MongoDB. For the implementation of my skillset, please see my <RouteLink to='/projects'>projects</RouteLink>.</p>
           <p>I will be happy to provide my services to your company. For more information, please see my <SiteLink rel="noreferrer" target='_blank' href='#'>CV</SiteLink>, and do connect with me via any of the social links on the left, or via <SiteLink rel="noreferrer" target='_blank' href='mailto:tomas.nagy.tn@gmail.com'>email</SiteLink>.</p>
         </Box>
       </Main>

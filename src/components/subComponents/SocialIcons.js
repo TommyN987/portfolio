@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
-import { Facebook, Github, Instagram, Linkedin } from "../AllSVGs";
+import { Facebook, Github, Instagram, Linkedin, Xing } from "../AllSVGs";
 import { DarkTheme } from '../Themes'
 
 const Icons = styled.div`
@@ -91,8 +91,8 @@ const SocialIcons = (props) => {
             delay: 1
           }
         }}>
-        <a rel='noreferrer' style={{color: 'inherit'}} target='_blank' href='https://www.instagram.com/tommyn987/'>
-          <Instagram width={25} height={25} fill={props.theme === 'dark' ? DarkTheme.text : DarkTheme.body} />
+        <a rel='noreferrer' style={{color: 'inherit'}} target='_blank' href='https://www.xing.com/profile/Tomas_Nagy9/cv'>
+          <Xing width={25} height={25} fill={props.theme === 'dark' ? DarkTheme.text : DarkTheme.body} />
         </a>
       </motion.div>
       <Line 

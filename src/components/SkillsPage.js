@@ -22,7 +22,7 @@ const Card = styled.div`
   color: ${props => props.theme.text};
   background-color: ${props => props.theme.body};
   padding: 2rem;
-  width: 35vw;
+  width: 40vw;
   min-width: 270px;
   height: 75vh;
   z-index: 3;

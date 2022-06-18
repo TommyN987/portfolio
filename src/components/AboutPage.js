@@ -22,7 +22,7 @@ const Box = styled.div`
   padding: 2rem;
   color: ${props => props.theme.text};
   z-index: 3;
-  width: 55vw;
+  width: 60vw;
   height: 65vh;
   line-height: 1.5;
   font-size: calc(.9em + .5vw);

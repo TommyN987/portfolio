@@ -24,7 +24,7 @@ const Card = styled.div`
   padding: 2rem;
   width: 35vw;
   min-width: 270px;
-  height: 70vh;
+  height: 75vh;
   z-index: 3;
   line-height: 1.5;
   display: flex;

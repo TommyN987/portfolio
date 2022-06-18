@@ -4,7 +4,7 @@ export const projects = [
     name: 'Scarabeus: Bug Tracker',
     description: 'Full-stack web application built in TypeScript with React, Node.js, Express, MongoDB and Firebase, utilizing libraries such as MaterialUI and Chart.js',
     tags: ['react', 'typescript', 'nodejs', 'express', 'mongodb', 'firebase', 'materialui'],
-    demo: '',
+    demo: 'https://scarabeus-bugtracker.netlify.app/',
     github: 'https://github.com/TommyN987/scarabeus', 
   },
   {
@@ -12,7 +12,7 @@ export const projects = [
     name: 'Footballista',
     description: 'A football statistics website built with React, utilizing the Football Standings API.',
     tags: ['react', 'API'],
-    demo: '',
+    demo: 'https://footballista-app.netlify.app/',
     github: 'https://github.com/TommyN987/footballista',
   },
   {

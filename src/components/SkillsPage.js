@@ -83,8 +83,8 @@ const SkillsPage = () => {
             <span>Skills</span>
           </Title>
           <div>
-            <Subtitle>CODING SKILLS</Subtitle>
-            <Text>HTML, CSS, Sass, JavaScript, TypeScript, React, Node.js, Express, MongoDB, Git, webpack, Jest</Text>
+            <Subtitle>TECH SKILLS</Subtitle>
+            <Text>React, TypeScript, JavaScript, Node.js, Python, C++, Git, Perforce, Jest</Text>
           </div>
           <div>
             <Subtitle>SOFT SKILLS</Subtitle>

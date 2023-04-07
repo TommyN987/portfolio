@@ -1,5 +1,5 @@
 import { ThemeProvider } from 'styled-components';
-import { LightTheme, DarkTheme } from './components/Themes';
+import { LightTheme } from './components/Themes';
 import GlobalStyle from './globalStyles';
 import { Routes, Route, useLocation } from 'react-router-dom';
 import AboutPage from './components/AboutPage';
